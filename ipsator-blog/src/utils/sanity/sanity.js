@@ -2,16 +2,20 @@ import { createClient } from "next-sanity";
 import imageUrlBuilder from '@sanity/image-url'
 
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID // "pv8y60vp"
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET // "production"
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-09-20'
+// const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID // "8k08ik80"
+// const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET // "production"
+// const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-09-20'
 
-const config = createClient({
+const projectId = "8k08ik80"
+const dataset = "production"
+const apiVersion = '2023-09-20'
+
+const config = {
     projectId,
     dataset,
-    apiVersion, // https://www.sanity.io/docs/api-versioning
+    apiVersion,
     useCdn: true,
-})
+}
 
 const builder = imageUrlBuilder(config);
 
