@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.0.2",
     "@stytch/nextjs": "^11.0.0",
     "@stytch/vanilla-js": "^2.2.0",
     "autoprefixer": "10.4.16",

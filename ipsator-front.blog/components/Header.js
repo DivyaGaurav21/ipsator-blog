@@ -37,7 +37,7 @@ const Header = () => {
 
 
     return (
-        <div className='sticky top-0'>
+        <div className='sticky top-0 z-10'>
             <div className="mx-auto flex justify-between items-center px-6 py-4 bg-neutral-400">
                 <h1 className='font-bold font-serif text-black text-3xl flex flex-row justify-center items-center'>
                     <Image src={Logo} width={140} height={100} />

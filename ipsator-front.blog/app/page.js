@@ -1,104 +1,17 @@
-// import { sanityClient } from "@/utils/sanity/sanity";
-
-// export const getData = async () => {
-//   console.log("getServerSideProps");
-//   const query = `*[_type == 'post']{
-//   _id,
-//   title,
-//   author->{
-//     name,
-//     image
-//   },
-//   mainImage,
-//   _createdAt
-// }`;
-
-//   try {
-//     const { postData } = await sanityClient.fetch(query);
-//     return postData;
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//   }
-// };
-
-// export default async function HomeBlog() {
-//   const data = await getData();
-//   console.log(data);
-
-
-
-
-//   return (
-//     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-//       <p>Divya Gaurav G</p>
-//     </main>
-//   )
-// }
-
-
-// pages/blog-posts.js
-
-// import { sanityClient } from "@/utils/sanity/sanity";
-
-// function BlogPosts({ posts }) {
-//   return (
-//     <div>
-//       {posts.map((post) => (
-//         <div key={post._id}>
-//           <h2>{post.title}</h2>
-//           <p>{post.body}</p>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default BlogPosts;
-
-// export async function getStaticProps() {
-//   // Define your query to fetch blog posts
-//   const query = `*[_type == 'post']{
-//     _id,
-//     title,
-//     author->{
-//       name,
-//       image
-//     },
-//     mainImage,
-//     body, // Include the 'body' field in your query
-//     _createdAt
-//   }`;
-
-//   try {
-//     const posts = await sanityClient.fetch(query);
-//     console.log('posts are ', posts);
-
-//     return {
-//       props: {
-//         posts,
-//       },
-//     };
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-
-//     return {
-//       props: {
-//         posts: [], // Return an empty array in case of an error
-//       },
-//     };
-//   }
-// }
-
-
-
-
-import React from 'react';
 import Link from 'next/link';
 import { getAllBlogPost } from '@/sanity/sanityIntegration';
+import { urlFor } from '@/sanity/sanity';
+import Image from 'next/image';
 
 const Home = async () => {
   const blogPosts = await getAllBlogPost();
   console.log("APPPP", blogPosts)
+
+  function sliceSentenceToWords(sentence, numberOfWords) {
+    const words = sentence.split(" ");
+    const slicedWords = words.slice(0, numberOfWords);
+    return slicedWords.join(" ");
+  }
 
   return (
     <section className="py-10 bg-neutral-400 sm:py-16 lg:py-14">
@@ -123,102 +36,40 @@ const Home = async () => {
 
         <div className="grid max-w-md grid-cols-1 gap-6 mx-auto mt-8 lg:mt-6 lg:grid-cols-3 lg:max-w-full">
 
-          <div className="overflow-hidden bg-neutral-300 rounded shadow">
-            <div className="p-5">
-              <div className="relative">
-                <Link href="/blog-post">
-                  <img
-                    className="object-cover w-full h-full"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-3.jpg"
-                    alt="Blog Post"
-                  />
-                </Link>
-                <div className="absolute top-4 left-4">
-                  <span className="px-4 py-2 text-xs font-semibold tracking-widest text-gray-900 uppercase bg-white rounded-full">
-                    Productivity
-                  </span>
+          {
+            blogPosts.map((blogPost) => (
+              <div className="overflow-hidden bg-neutral-300 rounded shadow" key={blogPost._id}>
+                <div className="p-5">
+                  {/* className="object-cover w-full h-full" */}
+                  <div className="relative">
+                    <Link href="/blog-post">
+                      <img src={urlFor(blogPost.mainImage).width(500).height(400).url()} />
+                    </Link>
+                    <div className="absolute top-4 left-4">
+                      <span className="px-4 py-2 text-xs font-semibold tracking-widest text-gray-900 uppercase bg-white rounded-full">
+                        {blogPost.author.name}
+                      </span>
+                    </div>
+                  </div>
+                  <span className="block mt-6 text-sm font-semibold tracking-widest text-gray-500 uppercase">{blogPost._createdAt.slice(0, 10)}</span>
+                  <p className="mt-5 text-2xl font-semibold">
+                    <Link href="/blog-post">
+                      {blogPost.title}
+                    </Link>
+                  </p>
+                  <p className="mt-4 text-base text-gray-600">
+                    {sliceSentenceToWords(blogPost.body[0].children[0].text, 40)}
+                  </p>
+                  <Link href="/blog-post">
+                    <p className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-red-700 transition-all duration-200 border-b-2 border-transparent hover:border-red-600 focus:border-red-600">
+                      Continue Reading &gt;
+                    </p>
+                  </Link>
                 </div>
               </div>
-              <span className="block mt-6 text-sm font-semibold tracking-widest text-gray-500 uppercase">May 12, 2020</span>
-              <p className="mt-5 text-2xl font-semibold">
-                <Link href="/blog-post">
-                  5 Productivity tips to write faster at morning.
-                </Link>
-              </p>
-              <p className="mt-4 text-base text-gray-600">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-              </p>
-              <Link href="/blog-post">
-                <p className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-red-700 transition-all duration-200 border-b-2 border-transparent hover:border-red-600 focus:border-red-600">
-                  Continue Reading &gt;
-                </p>
-              </Link>
-            </div>
-          </div>
-          <div className="overflow-hidden bg-neutral-300 rounded shadow">
-            <div className="p-5">
-              <div className="relative">
-                <Link href="/blog-post">
-                  <img
-                    className="object-cover w-full h-full"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-3.jpg"
-                    alt="Blog Post"
-                  />
-                </Link>
-                <div className="absolute top-4 left-4">
-                  <span className="px-4 py-2 text-xs font-semibold tracking-widest text-gray-900 uppercase bg-white rounded-full">
-                    Productivity
-                  </span>
-                </div>
-              </div>
-              <span className="block mt-6 text-sm font-semibold tracking-widest text-gray-500 uppercase">May 12, 2020</span>
-              <p className="mt-5 text-2xl font-semibold">
-                <Link href="/blog-post">
-                  5 Productivity tips to write faster at morning.
-                </Link>
-              </p>
-              <p className="mt-4 text-base text-gray-600">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-              </p>
-              <Link href="/blog-post">
-                <p className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-red-700 transition-all duration-200 border-b-2 border-transparent hover:border-red-600 focus:border-red-600">
-                  Continue Reading &gt;
-                </p>
-              </Link>
-            </div>
-          </div>
-          <div className="overflow-hidden bg-neutral-300 rounded shadow">
-            <div className="p-5">
-              <div className="relative">
-                <Link href="/blog-post">
-                  <img
-                    className="object-cover w-full h-full"
-                    src="https://cdn.rareblocks.xyz/collection/celebration/images/blog/2/blog-post-3.jpg"
-                    alt="Blog Post"
-                  />
-                </Link>
-                <div className="absolute top-4 left-4">
-                  <span className="px-4 py-2 text-xs font-semibold tracking-widest text-gray-900 uppercase bg-white rounded-full">
-                    Productivity
-                  </span>
-                </div>
-              </div>
-              <span className="block mt-6 text-sm font-semibold tracking-widest text-gray-500 uppercase">May 12, 2020</span>
-              <p className="mt-5 text-2xl font-semibold">
-                <Link href="/blog-post">
-                  5 Productivity tips to write faster at morning.
-                </Link>
-              </p>
-              <p className="mt-4 text-base text-gray-600">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-              </p>
-              <Link href="/blog-post">
-                <p className="inline-flex items-center justify-center pb-0.5 mt-5 text-base font-semibold text-red-700 transition-all duration-200 border-b-2 border-transparent hover:border-red-600 focus:border-red-600">
-                  Continue Reading &gt;
-                </p>
-              </Link>
-            </div>
-          </div>
+            ))
+          }
+
 
 
         </div>
