@@ -1,5 +1,5 @@
 {
-  "name": "frontend.blog",
+  "name": "ipsator-front.blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "10.4.15",
+    "@stytch/nextjs": "^11.0.0",
+    "@stytch/vanilla-js": "^2.2.0",
+    "autoprefixer": "10.4.16",
     "next": "13.5.2",
     "postcss": "8.4.30",
     "react": "18.2.0",
