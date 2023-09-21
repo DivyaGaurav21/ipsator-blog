@@ -94,8 +94,11 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { getAllBlogPost } from '@/sanity/sanityIntegration';
 
-const Home = () => {
+const Home = async () => {
+  const blogPosts = await getAllBlogPost();
+  console.log("APPPP", blogPosts)
 
   return (
     <section className="py-10 bg-neutral-400 sm:py-16 lg:py-14">
