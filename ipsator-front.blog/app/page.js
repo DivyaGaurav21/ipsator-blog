@@ -3,15 +3,15 @@ import { getAllBlogPost } from '@/sanity/sanityIntegration';
 import { urlFor } from '@/sanity/sanity';
 import Image from 'next/image';
 
+export function sliceSentenceToWords(sentence, numberOfWords) {
+  const words = sentence.split(" ");
+  const slicedWords = words.slice(0, numberOfWords);
+  return slicedWords.join(" ");
+}
+
 const Home = async () => {
   const blogPosts = await getAllBlogPost();
-  console.log("APPPP", blogPosts)
-
-  function sliceSentenceToWords(sentence, numberOfWords) {
-    const words = sentence.split(" ");
-    const slicedWords = words.slice(0, numberOfWords);
-    return slicedWords.join(" ");
-  }
+// console.log("APPPP", blogPosts.length)
 
   return (
     <section className="py-10 bg-neutral-400 sm:py-16 lg:py-14">

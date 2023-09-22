@@ -58,7 +58,7 @@ const Header = () => {
                             <Link href="/profile">
                                 <span className="font-bold text-black flex flex-row gap-2">
                                     <h1 className='text-red-600 font-extrabold'>{user?.name?.first_name + " " + user?.name?.last_name}</h1>
-                                    <img src={user?.providers[0]?.profile_picture_url} alt="user" className='w-[50px] h-[50px] mt-[-10px] rounded-full' />
+                                    <img src={user?.providers[0]?.profile_picture_url} alt="user" className='w-[50px] h-[50px] mt-[-10px] rounded-full border border-red-700' />
                                 </span>
                             </Link>
                         </li>

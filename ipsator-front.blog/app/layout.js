@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import StytchProvider from '@/components/StytchProvider';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
         </StytchProvider>
+        <Footer />
+        <script src="https://kit.fontawesome.com/83b993c0e4.js" crossorigin="anonymous"></script>
       </body>
     </html>
 
