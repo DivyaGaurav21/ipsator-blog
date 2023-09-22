@@ -28,3 +28,7 @@ body::-webkit-scrollbar-track {
   background: rgb(255, 255, 255);
   border-radius: 10px;
 }
+
+.scrolled{
+ @apply bg-neutral-500;
+}

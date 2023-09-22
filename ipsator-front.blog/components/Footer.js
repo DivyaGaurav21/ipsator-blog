@@ -12,17 +12,17 @@ const Footer = async () => {
     blogPosts = blogPosts.slice(0, 5);
 
     return (
-        <footer className="bg-red-900 text-white py-8">
+        <footer className="bg-slate-900 text-white py-8">
             <div className="container mx-auto">
-                <div className='flex justify-between py-5 flex-col md:flex-row px-4'>
+                <div className='flex justify-between py-5 flex-col md:flex-row px-4 rounded-2xl bg-slate-100'>
                     <Image src={Logo} alt="Company_Logo" width={200} height={100} />
-                    <div className='min-w-[250px] flex flex-row justify-end gap-3 text-3xl'>
+                    <div className='min-w-[250px] flex flex-row text-red-600 justify-end gap-3 text-3xl'>
                         <i class="fa-brands fa-linkedin"></i>
                         <i class="fa-brands fa-square-twitter"></i>
                         <i class="fa-brands fa-square-facebook"></i>
                     </div>
                 </div>
-                <hr />
+
                 <div className="lg:flex lg:justify-between px-6 my-7">
                     <div className="lg:w-1/3 mb-8 lg:mb-0">
                         <div className="flex flex-col items-center">

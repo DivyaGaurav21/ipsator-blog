@@ -4,6 +4,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import StytchProvider from '@/components/StytchProvider';
 import Footer from '@/components/Footer';
+import Test from '@/components/Test';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +19,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <StytchProvider>
-          <Header />
+          {/* <Header /> */}
+          <Test />
           {children}
         </StytchProvider>
         <Footer />

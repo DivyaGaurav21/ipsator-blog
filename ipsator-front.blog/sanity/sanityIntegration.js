@@ -22,3 +22,17 @@ export async function getAllBlogPost() {
     console.error("Error fetching data:", error);
   }
 }
+
+export async function getAllCateogary() {
+  const query = `*[_type == 'category']{
+                _id, 
+                title,
+               description
+           }`;
+  try {
+    const category = await sanityClient.fetch(query);
+    return category;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
