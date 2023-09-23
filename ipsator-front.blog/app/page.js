@@ -20,7 +20,7 @@ const Home = async () => {
       <section className="py-10 bg-gray-100">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center lg:text-left">
-            <h2 className="text-3xl font-extrabold leading-tight text-red-700">Latest Blog Posts</h2>
+            <h2 className="text-3xl font-extrabold leading-tight text-red-700 font-mono">Latest Blog Posts</h2>
           </div>
           <div className="hidden lg:flex lg:items-center lg:space-x-3 mt-4">
             <button

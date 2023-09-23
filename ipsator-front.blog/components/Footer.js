@@ -54,13 +54,13 @@ const Footer = async () => {
                     <div className="lg:w-1/3 mb-8 lg:mb-0 pl-0 xl:pl-16 font-serif flex flex-col gap-2">
                         <h3 className="text-xl font-semibold mb-4 ">Quick Links</h3>
                         <ul className="list-disc leading-7 pl-10">
-                            <li><Link href="/" className="text-gray-300 hover:text-black">Home</Link></li>
-                            <li><Link href="/contact" className="text-gray-300 hover:text-black">Service</Link></li>
-                            <li><Link href="https://ipsator.com/" className="text-gray-300 hover:text-black">Case Studies</Link></li>
-                            <li><Link href="/about" className="text-gray-300 hover:text-black">About Us</Link></li>
-                            <li><Link href="/" className="text-gray-300 hover:text-black">Blog</Link></li>
-                            <li><Link href="/contact" className="text-gray-300 hover:text-black">Contact Us</Link></li>
-                            <li><Link href="/https://ipsator.com/" className="text-gray-300 hover:text-black">Terms & Conditions</Link></li>
+                            <li><Link href="/" className="text-gray-300 hover:text-yellow-400">Home</Link></li>
+                            <li><Link href="/contact" className="text-gray-300 hover:text-yellow-400">Service</Link></li>
+                            <li><Link href="https://ipsator.com/" className="text-gray-300 hover:text-yellow-400">Case Studies</Link></li>
+                            <li><Link href="/about" className="text-gray-300 hover:text-yellow-400">About Us</Link></li>
+                            <li><Link href="/" className="text-gray-300 hover:text-yellow-400">Blog</Link></li>
+                            <li><Link href="/contact" className="text-gray-300 hover:text-yellow-400">Contact Us</Link></li>
+                            <li><Link href="/https://ipsator.com/" className="text-gray-300 hover:text-yellow-400">Terms & Conditions</Link></li>
                         </ul>
                     </div>
 
@@ -69,7 +69,7 @@ const Footer = async () => {
                         <ul className="list-disc mb-3">
                             {
                                 blogPosts.map(post =>
-                                    <li key={post._id} className='hover:text-black text-sm leading-6'>{sliceSentenceToWords(post.body[0].children[0].text, 12)}</li>
+                                    <li key={post._id} className='hover:text-yellow-400 text-sm leading-6'>{sliceSentenceToWords(post.body[0].children[0].text, 12)}</li>
                                 )
                             }
                         </ul>

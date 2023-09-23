@@ -18,7 +18,7 @@ const Hero = async () => {
                     <h1 className="font-mono text-4xl font-extrabold text-yellow-400 mb-6">Popular Blog Categories</h1>
                     <ul className="bg-gray-800 shadow-lg rounded-lg p-4">
                         {postCategory.map(item => (
-                            <li key={item._id} className="py-4 border-b border-gray-700">
+                            <li key={item._id} className="py-3 border-b-2 border-gray-700 hover:bg-gray-700 px-3">
                                 <h2 className="text-xl font-semibold text-blue-400">{item.title}</h2>
                                 <p className="text-gray-300 mt-2">{sliceSentenceToWords(item.description, 25)}</p>
                             </li>

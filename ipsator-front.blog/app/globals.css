@@ -7,7 +7,7 @@ body{
 }
 
 .signupbtn{
-  @apply bg-black text-white px-5 py-3;
+  @apply bg-black text-white px-5 py-3 max-w-sm m-auto;
 }
 
 .signinbtn{
@@ -30,5 +30,5 @@ body::-webkit-scrollbar-track {
 }
 
 .scrolled{
- @apply bg-neutral-500;
+ @apply bg-orange-300;
 }
