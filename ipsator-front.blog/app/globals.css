@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body{
-  @apply bg-neutral-400;
+  @apply bg-neutral-200;
 }
 
 .signupbtn{
@@ -31,4 +31,7 @@ body::-webkit-scrollbar-track {
 
 .scrolled{
  @apply bg-orange-300;
+}
+.c{
+color:#fbf4c1
 }

@@ -43,7 +43,7 @@ const Home = async () => {
                 key={blogPost._id}
                 className="overflow-hidden bg-white rounded-lg shadow-md"
               >
-                <Link href="/blog-post">
+                <Link href={`/blog_post/${blogPost.slug.current}`}>
                   <div>
                     <img
                       src={urlFor(blogPost.mainImage).width(500).height(400).url()}
@@ -59,7 +59,7 @@ const Home = async () => {
                     </span>
                   </div>
                   <h2 className="text-xl font-semibold">
-                    <Link href="/blog-post">
+                    <Link href={`/blog_post/${blogPost.slug.current}`}>
                       <div className="text-gray-800 hover:underline">
                         {blogPost.title}
                       </div>
@@ -68,7 +68,7 @@ const Home = async () => {
                   <p className="mt-2 text-gray-600">
                     {sliceSentenceToWords(blogPost.body[0].children[0].text, 40)}
                   </p>
-                  <Link href="/blog-post">
+                  <Link href={`/blog_post/${blogPost.slug.current}`}>
                     <div className="inline-flex items-center justify-center mt-4 text-red-700 hover:text-red-800 hover:underline">
                       Continue Reading &rarr;
                     </div>

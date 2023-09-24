@@ -36,3 +36,26 @@ export async function getAllCateogary() {
     console.error("Error fetching data:", error);
   }
 }
+
+export async function getSlugDetail(slug_name) {
+  const query = `*[_type == 'post' && slug.current == '${slug_name}']{
+    _id,
+    _createdAt,
+    author->{
+      name,
+      bio
+    },
+    mainImage,
+    body,
+    categories,
+    slug,
+    title
+  }`;
+  try {
+    const slug_detail = await sanityClient.fetch(query);
+    return slug_detail;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+

@@ -1,4 +1,5 @@
 'use client'
+
 import React, { useState } from "react";
 
 const Contacts = () => {
@@ -32,11 +33,11 @@ const Contacts = () => {
     };
 
     return (
-        <div className="h-auto md:h-[80vh]">
+        <div className="h-auto md:h-[80vh] bg-gray-100">
             <h1 className="text-center text-4xl mb-8 font-bold">Contact Us</h1>
             <div className="flex flex-col md:flex-row justify-center md:space-y-0 gap-2 md:w-[85%] mx-auto">
                 {/* Box 1 */}
-                <form className="flex flex-col items-center justify-center gap-6 w-full md:w-[40%] bg-neutral-500 rounded-2xl p-3">
+                <form className="flex flex-col items-center justify-center gap-6 w-full md:w-[40%] bg-white rounded-2xl p-3 shadow-md">
                     {/* Your Name and Email */}
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4 w-full">
                         <input
@@ -82,7 +83,7 @@ const Contacts = () => {
 
                     {/* Button */}
                     <button
-                        className="w-full bg-slate-800 py-3 rounded-3xl font-extrabold text-white"
+                        className="w-full bg-red-500 py-3 rounded-3xl font-extrabold text-white hover:bg-red-600 transition duration-300"
                         onClick={handleSend}
                     >
                         Submit
@@ -90,25 +91,24 @@ const Contacts = () => {
                 </form>
 
                 {/* Box 2 */}
-                <div className="pl-24 py-10 w-full md:w-[60%] bg-neutral-500 shadow-lg rounded-2xl md:ml-4">
-                    <div className="mb-4">
-                        <i className="fa-regular fa-address-book text-black text-2xl rounded-full bg-red-500 p-3"></i>
-                        <h1 className="text-xl font-semibold mb-2">Address</h1>
-                        <p className="text-white">
+                <div className="pl-12 py-10 w-full md:w-[60%] bg-white shadow-md rounded-2xl md:ml-4">
+                    <div className="mb-6">
+                        <i className="fa-regular fa-address-book text-red-500 text-4xl rounded-full bg-red-100 p-3" />
+                        <h1 className="text-xl font-semibold mt-2">Address</h1>
+                        <p className="text-gray-700">
                             Headquarters & Engineering Centre:- Hosur Rd, Santhosapuram,
-                            Koramangala 2nd Block, Koramangala, Bengaluru, Karnataka 560095
-                            (INDIA)
+                            Koramangala 2nd Block, Koramangala, Bengaluru, Karnataka 560095 (INDIA)
                         </p>
                     </div>
-                    <div className="mb-4">
-                        <i className="fa-regular fa-envelope text-black text-2xl rounded-full bg-red-500 p-3"></i>
-                        <h1 className="text-xl font-semibold mb-2">Email ID</h1>
-                        <p className="text-white">info@ipsator.com</p>
+                    <div className="mb-6">
+                        <i className="fa-regular fa-envelope text-red-500 text-4xl rounded-full bg-red-100 p-3" />
+                        <h1 className="text-xl font-semibold mt-2">Email ID</h1>
+                        <p className="text-gray-700">info@ipsator.com</p>
                     </div>
                     <div>
-                        <i className="fa-solid fa-phone text-black text-2xl rounded-full bg-red-500 p-3"></i>
-                        <h1 className="text-xl font-semibold mb-2">Phone</h1>
-                        <p className="text-white">+91 XXX XXX XXXX</p>
+                        <i className="fa-solid fa-phone text-red-500 text-4xl rounded-full bg-red-100 p-3" />
+                        <h1 className="text-xl font-semibold mt-2">Phone</h1>
+                        <p className="text-gray-700">+91 XXX XXX XXXX</p>
                     </div>
                 </div>
             </div>

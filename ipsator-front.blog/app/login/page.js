@@ -15,7 +15,7 @@ const Login = () => {
     const styles = {
         container: {
             width: "400px",
-            backgroundColor: "#bcbaba",
+            backgroundColor: "#fbf4c1",
 
         },
         buttons: {
@@ -42,7 +42,7 @@ const Login = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-[80vh]">
+        <div className="flex justify-center items-center h-[65vh]">
             <StytchLogin config={config} styles={styles} />
         </div>
     );
