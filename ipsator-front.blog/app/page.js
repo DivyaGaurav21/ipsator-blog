@@ -12,7 +12,6 @@ export function sliceSentenceToWords(sentence, numberOfWords) {
 
 const Home = async () => {
   const blogPosts = await getAllBlogPost();
-  // console.log("APPPP", blogPosts.length)
 
   return (
     <>
@@ -48,7 +47,7 @@ const Home = async () => {
                     <img
                       src={urlFor(blogPost.mainImage).width(500).height(400).url()}
                       alt={blogPost.title}
-                      className="w-full h-48 object-cover object-center"
+                      className="w-[98%] h-48 object-cover object-center"
                     />
                   </div>
                 </Link>
@@ -65,8 +64,8 @@ const Home = async () => {
                       </div>
                     </Link>
                   </h2>
-                  <p className="mt-2 text-gray-600">
-                    {sliceSentenceToWords(blogPost.body[0].children[0].text, 40)}
+                  <p className="mt-2 text-gray-600 line-clamp-6">
+                    {blogPost.body[0].children[0].text}
                   </p>
                   <Link href={`/blog_post/${blogPost.slug.current}`}>
                     <div className="inline-flex items-center justify-center mt-4 text-red-700 hover:text-red-800 hover:underline">

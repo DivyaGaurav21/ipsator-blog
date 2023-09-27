@@ -4,7 +4,6 @@ import Logo from './Ipsator_Logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAllBlogPost } from '@/sanity/sanityIntegration';
-import { sliceSentenceToWords } from '@/app/page';
 
 
 const Footer = async () => {
@@ -17,9 +16,9 @@ const Footer = async () => {
                 <div className='flex justify-between py-5 flex-col md:flex-row px-4 rounded-2xl bg-slate-100'>
                     <Image src={Logo} alt="Company_Logo" width={200} height={100} />
                     <div className='min-w-[250px] flex flex-row text-red-600 justify-end gap-3 text-3xl'>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <i class="fa-brands fa-square-twitter"></i>
-                        <i class="fa-brands fa-square-facebook"></i>
+                        <i className="fa-brands fa-linkedin"></i>
+                        <i className="fa-brands fa-square-twitter"></i>
+                        <i className="fa-brands fa-square-facebook"></i>
                     </div>
                 </div>
 
@@ -69,7 +68,7 @@ const Footer = async () => {
                         <ul className="list-disc mb-3">
                             {
                                 blogPosts.map(post =>
-                                    <li key={post._id} className='hover:text-yellow-400 text-sm leading-6'>{sliceSentenceToWords(post.body[0].children[0].text, 12)}</li>
+                                    <li key={post._id} className='hover:text-yellow-400 text-sm mt-3 line-clamp-2 cursor-pointer'>{post.body[0].children[0].text}</li>
                                 )
                             }
                         </ul>

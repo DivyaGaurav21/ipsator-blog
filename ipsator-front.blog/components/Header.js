@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from './Ipsator_Logo.svg';
-import { useStytch, useStytchUser } from '@stytch/nextjs';
+import { useStytchUser } from '@stytch/nextjs';
 import { useEffect, useState } from 'react';
 
 const navContent = [
@@ -34,6 +34,9 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+    // const stych = useStytch();
+    const { user } = useStytchUser();
+
     // Function to handle the scroll event
     const handleScroll = () => {
         if (window.scrollY > 100) {
@@ -63,8 +66,7 @@ const Header = () => {
         };
     }, []);
 
-    // const stych = useStytch();
-    const { user } = useStytchUser();
+
     // console.log(user.providers.profile_picture_url);
     // console.log();
 
@@ -74,7 +76,7 @@ const Header = () => {
         <div className="sticky top-0 z-10">
             <div className={`mx-auto flex justify-between items-center px-6 py-4 bg-yellow-300  ${scrolled ? 'scrolled' : ''}`}>
                 <h1 className='font-bold font-serif text-black text-3xl flex flex-row justify-center items-center'>
-                    <Image src={Logo} width={140} height={100} />
+                    <Image src={Logo} width={140} height={100} alt='ipsator_logo' />
                     <Link href="/">-BLOG</Link>
                 </h1>
 
@@ -101,7 +103,7 @@ const Header = () => {
                 </ul>
 
                 <div className="md:hidden cursor-pointer" onClick={toggleMobileMenu}>
-                    <i class="fa-solid fa-bars text-3xl"></i>
+                    {mobileMenuOpen ? <i className="fa-solid fa-xmark text-3xl"></i> : <i className="fa-solid fa-bars text-3xl"></i>}
                 </div>
 
             </div>

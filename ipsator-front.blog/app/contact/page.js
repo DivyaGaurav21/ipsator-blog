@@ -93,7 +93,9 @@ const Contacts = () => {
                 {/* Box 2 */}
                 <div className="pl-12 py-10 w-full md:w-[60%] bg-white shadow-md rounded-2xl md:ml-4">
                     <div className="mb-6">
-                        <i className="fa-regular fa-address-book text-red-500 text-4xl rounded-full bg-red-100 p-3" />
+                        <div className="w-[60px] min-h-[60px] bg-red-100 rounded-full flex justify-center items-center">
+                            <i className="fa-regular fa-address-book text-red-500 text-4xl rounded-full p-3" />
+                        </div>
                         <h1 className="text-xl font-semibold mt-2">Address</h1>
                         <p className="text-gray-700">
                             Headquarters & Engineering Centre:- Hosur Rd, Santhosapuram,
@@ -101,12 +103,16 @@ const Contacts = () => {
                         </p>
                     </div>
                     <div className="mb-6">
-                        <i className="fa-regular fa-envelope text-red-500 text-4xl rounded-full bg-red-100 p-3" />
+                        <div className="w-[60px] min-h-[60px] bg-red-100 rounded-full flex justify-center items-center">
+                            <i className="fa-regular fa-envelope text-red-500 text-4xl rounded-full p-3" />
+                        </div>
                         <h1 className="text-xl font-semibold mt-2">Email ID</h1>
                         <p className="text-gray-700">info@ipsator.com</p>
                     </div>
                     <div>
-                        <i className="fa-solid fa-phone text-red-500 text-4xl rounded-full bg-red-100 p-3" />
+                        <div className="w-[60px] min-h-[60px] bg-red-100 rounded-full flex justify-center items-center">
+                            <i className="fa-solid fa-phone text-red-500 text-4xl rounded-full p-3" />
+                        </div>
                         <h1 className="text-xl font-semibold mt-2">Phone</h1>
                         <p className="text-gray-700">+91 XXX XXX XXXX</p>
                     </div>

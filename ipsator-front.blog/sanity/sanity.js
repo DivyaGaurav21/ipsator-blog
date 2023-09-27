@@ -8,7 +8,7 @@ import imageUrlBuilder from '@sanity/image-url'
 
 const projectId = "8k08ik80"
 const dataset = "production"
-const apiVersion = '2023-09-21'
+const apiVersion = '2023-09-25'
 
 const config = {
     projectId,

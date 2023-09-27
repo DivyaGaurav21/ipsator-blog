@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           {children}
         </StytchProvider>
         <Footer />
-        <script src="https://kit.fontawesome.com/83b993c0e4.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/83b993c0e4.js"></script>
       </body>
     </html>
 
