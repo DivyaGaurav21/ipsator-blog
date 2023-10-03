@@ -15,6 +15,7 @@ const Footer = async () => {
             <div className="container mx-auto">
                 <div className='flex justify-between py-5 flex-col md:flex-row px-4 rounded-2xl bg-slate-100'>
                     <Image src={Logo} alt="Company_Logo" width={200} height={100} />
+                    {/* <h1 className='text-3xl font-bold text-white'>IPSATOR</h1> */}
                     <div className='min-w-[250px] flex flex-row text-red-600 justify-end gap-3 text-3xl'>
                         <i className="fa-brands fa-linkedin"></i>
                         <i className="fa-brands fa-square-twitter"></i>

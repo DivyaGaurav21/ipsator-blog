@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.heading{
+  @apply text-center lg:text-left text-3xl font-extrabold leading-tight text-red-700 font-mono;
+}
+
 body{
-  @apply bg-neutral-200;
+  @apply bg-white;
 }
 
 .signupbtn{

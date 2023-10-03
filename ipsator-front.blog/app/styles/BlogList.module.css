@@ -1,0 +1,27 @@
+.mainsection{
+    @apply py-10 px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl;
+}
+.desktopbtn{
+    @apply hidden lg:flex lg:items-center mt-4;
+}
+.mobilebtn{
+    @apply flex items-center justify-center mt-8 lg:hidden;
+}
+.bloglist{
+   @apply grid grid-cols-1 gap-6 mt-8 lg:grid-cols-3; 
+}
+.singlepost{
+ @apply overflow-hidden bg-stone-200 rounded-lg shadow-lg;   
+}
+.blogimg{
+    @apply w-full min-h-[220px] object-cover object-center;
+}
+.authorname{
+    @apply px-3 py-1 text-xs font-semibold text-gray-700 bg-yellow-100 rounded-full;
+}
+.continue{
+    @apply inline-flex items-center justify-center mt-4 text-red-700 hover:text-red-800 hover:underline;
+}
+.para{
+    @apply mt-2 text-red-950 line-clamp-6;
+}

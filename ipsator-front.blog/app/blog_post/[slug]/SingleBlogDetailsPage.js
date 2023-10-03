@@ -65,6 +65,12 @@ const SingleBlogDetailsPage = ({ blogDetail }) => {
                 <p className="text-white text-justify font-mono text-sm">{author.bio}</p>
             </div>
 
+
+            <div>
+                <p>Enjoy this Blog ?</p>
+                <h3>Leave a Comment below ?</h3>
+            </div>
+
         </div>
     );
 };
