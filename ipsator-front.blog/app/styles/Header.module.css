@@ -1,0 +1,36 @@
+.navbar{
+    @apply sticky top-0 z-10;
+}
+.navdiv{
+    @apply mx-auto flex justify-between items-center px-6 py-4 bg-yellow-300;
+}
+.logoheading{
+    @apply font-bold font-serif text-black text-3xl flex flex-row justify-center items-center;
+}
+.navul{
+    @apply hidden md:flex justify-between min-w-[500px];
+}
+.navitem{
+    @apply font-bold text-black text-xl hover:border-b-2 border-black transition-transform hover:scale-105;
+}
+.navname{
+    @apply font-bold text-black flex flex-row gap-2;
+}
+.userimg{
+    @apply w-[50px] h-[50px] mt-[-10px] rounded-full border border-red-700;
+}
+.navspann{
+    @apply block py-2 px-4 font-bold text-black;
+}
+.username{
+    @apply text-red-600 font-extrabold;
+}
+.userimgg{
+    @apply w-[50px] h-[50px] mt-[-10px] rounded-full border border-red-700 ml-2;
+}
+.navlist{
+    @apply block py-2 px-4 font-bold text-white text-xl;
+}
+.navulmobile{
+    @apply md:hidden bg-slate-800 text-center py-2;
+}

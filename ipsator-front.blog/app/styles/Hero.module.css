@@ -1,0 +1,30 @@
+.hero{
+@apply bg-slate-900 text-white py-16;
+}
+.herodiv{
+    @apply container mx-auto flex flex-col lg:flex-row items-center justify-center;
+}
+
+.heroimgdiv{
+@apply lg:w-1/2 mb-10 lg:mb-0;
+}
+.herocategory{
+    @apply w-[95%] m-auto lg:w-1/2 lg:pl-24 md:pl-16 text-center lg:text-left;
+}
+
+
+.heroheading{
+    @apply font-mono text-4xl font-extrabold text-yellow-400 mb-6;
+}
+.heroul{
+    @apply bg-gray-800 shadow-lg rounded-lg p-4;
+}
+.heroli{
+    @apply py-3 border-b-2 border-gray-700 hover:bg-gray-700 px-3;
+}
+.liheading{
+    @apply text-xl font-semibold text-blue-400;
+}
+.lipara{
+    @apply text-gray-300 mt-2 line-clamp-3;
+}

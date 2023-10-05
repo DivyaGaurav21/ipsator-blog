@@ -4,6 +4,45 @@ import Logo from './Ipsator_Logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAllBlogPost } from '@/sanity/sanityIntegration';
+import Styles from '../app/styles/Footer.module.css'
+
+const social_link = [
+    {
+        id: 1,
+        url: '/',
+        linktext: 'Home'
+    },
+    {
+        id: 2,
+        url: '/contact',
+        linktext: 'Service'
+    },
+    {
+        id: 3,
+        url: 'https://ipsator.com/',
+        linktext: 'Case Studies'
+    },
+    {
+        id: 4,
+        url: '/about',
+        linktext: 'About Us'
+    },
+    {
+        id: 5,
+        url: '/',
+        linktext: 'Blog'
+    },
+    {
+        id: 6,
+        url: '/contact',
+        linktext: 'Contact Us'
+    },
+    {
+        id: 7,
+        url: '/https://ipsator.com/',
+        linktext: 'Terms & Conditions'
+    },
+]
 
 
 const Footer = async () => {
@@ -11,20 +50,20 @@ const Footer = async () => {
     blogPosts = blogPosts.slice(0, 5);
 
     return (
-        <footer className="bg-slate-900 text-white py-8">
-            <div className="container mx-auto">
-                <div className='flex justify-between py-5 flex-col md:flex-row px-4 rounded-2xl bg-slate-100'>
+        <footer className={Styles.footerdiv}>
+            <div className={Styles.footer}>
+                <div className={Styles.footertop}>
                     <Image src={Logo} alt="Company_Logo" width={200} height={100} />
                     {/* <h1 className='text-3xl font-bold text-white'>IPSATOR</h1> */}
-                    <div className='min-w-[250px] flex flex-row text-red-600 justify-end gap-3 text-3xl'>
+                    <div className={Styles.social}>
                         <i className="fa-brands fa-linkedin"></i>
                         <i className="fa-brands fa-square-twitter"></i>
                         <i className="fa-brands fa-square-facebook"></i>
                     </div>
                 </div>
 
-                <div className="lg:flex lg:justify-between px-6 my-7">
-                    <div className="lg:w-1/3 mb-8 lg:mb-0">
+                <div className={Styles.address}>
+                    <div className={Styles.addressdiv}>
                         <div className="flex flex-col items-center">
                             <div>
                                 <h3 className="text-lg font-semibold">Ipsator Analystics Pvt Ltd.</h3>
@@ -51,16 +90,16 @@ const Footer = async () => {
                     </div>
 
 
-                    <div className="lg:w-1/3 mb-8 lg:mb-0 pl-0 xl:pl-16 font-serif flex flex-col gap-2">
-                        <h3 className="text-xl font-semibold mb-4 ">Quick Links</h3>
-                        <ul className="list-disc leading-7 pl-10">
-                            <li><Link href="/" className="text-gray-300 hover:text-yellow-400">Home</Link></li>
-                            <li><Link href="/contact" className="text-gray-300 hover:text-yellow-400">Service</Link></li>
-                            <li><Link href="https://ipsator.com/" className="text-gray-300 hover:text-yellow-400">Case Studies</Link></li>
-                            <li><Link href="/about" className="text-gray-300 hover:text-yellow-400">About Us</Link></li>
-                            <li><Link href="/" className="text-gray-300 hover:text-yellow-400">Blog</Link></li>
-                            <li><Link href="/contact" className="text-gray-300 hover:text-yellow-400">Contact Us</Link></li>
-                            <li><Link href="/https://ipsator.com/" className="text-gray-300 hover:text-yellow-400">Terms & Conditions</Link></li>
+                    <div className={Styles.footerlink}>
+                        <h3 className={Styles.linkheading}>Quick Links</h3>
+                        <ul className={Styles.ful}>
+                            {
+                                social_link.map(link =>
+                                    <li key={link.id}>
+                                        <Link href={link.url} className={Styles.linkstyle}>{link.linktext}</Link>
+                                    </li>
+                                )
+                            }
                         </ul>
                     </div>
 
@@ -69,7 +108,7 @@ const Footer = async () => {
                         <ul className="list-disc mb-3">
                             {
                                 blogPosts.map(post =>
-                                    <li key={post._id} className='hover:text-yellow-400 text-sm mt-3 line-clamp-2 cursor-pointer'>{post.body[0].children[0].text}</li>
+                                    <li key={post._id} className={Styles.footerpara}>{post.body[0].children[0].text}</li>
                                 )
                             }
                         </ul>
@@ -77,7 +116,7 @@ const Footer = async () => {
                 </div>
                 <hr />
 
-                <p className="text-sm mt-6 text-center">&copy; 2023 Your Company. All rights reserved.</p>
+                <p className={Styles.bottom}>&copy; 2023 Your Company. All rights reserved.</p>
             </div>
         </footer>
     );

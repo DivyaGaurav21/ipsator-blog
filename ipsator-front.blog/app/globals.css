@@ -11,7 +11,7 @@ body{
 }
 
 .signupbtn{
-  @apply bg-black text-white px-5 py-3 max-w-sm m-auto;
+  @apply bg-black text-white px-5 py-3 max-w-sm m-auto !important;
 }
 
 .signinbtn{

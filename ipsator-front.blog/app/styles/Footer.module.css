@@ -1,0 +1,36 @@
+.footerdiv{
+    @apply bg-slate-900 text-white py-8;
+}
+.footer{
+    @apply container mx-auto;
+}
+.footertop{
+    @apply flex justify-between py-5 mx-2 flex-col md:flex-row px-4 rounded-2xl bg-slate-100;
+}
+.social{
+    @apply min-w-[250px] flex flex-row text-black justify-end gap-3 text-3xl;
+}
+.footerpara{
+ @apply hover:text-yellow-400 text-sm mt-3 line-clamp-2 cursor-pointer;
+}
+.bottom{
+    @apply text-sm mt-6 text-center;
+}
+.footerlink{
+    @apply lg:w-1/3 mb-8 lg:mb-0 pl-0 xl:pl-16 font-serif flex flex-col gap-2;
+}
+.linkheading{
+    @apply text-xl font-semibold mb-4 ;
+}
+.ful{
+    @apply list-disc leading-7 pl-10;
+}
+.linkstyle{
+    @apply text-gray-300 hover:text-yellow-400;
+}
+.address{
+    @apply lg:flex lg:justify-between px-6 my-7;
+}
+.addressdiv{
+    @apply lg:w-1/3 mb-8 lg:mb-0;
+}

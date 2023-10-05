@@ -1,0 +1,41 @@
+.postcontainer{
+    @apply bg-slate-300 p-4;
+}
+.postheader{
+    @apply relative rounded-lg overflow-hidden;
+}
+.postimg{
+    @apply w-full h-[70vh] object-cover object-center;
+}
+.posttitle{
+    @apply absolute bottom-0 left-0 w-full bg-slate-900 text-yellow-200 p-4;
+}
+.titleh{
+    @apply text-3xl text-center font-semibold;
+}
+
+.blogbody{
+    @apply flex flex-row rounded-2xl bg-yellow-300 items-center justify-around h-[80px];
+}
+.blogContent{
+    @apply text-slate-900 font-extrabold text-xl font-sans;
+}
+.publish{
+    @apply text-slate-900 font-bold font-mono;
+}
+.richtext{
+    @apply w-full md:w-[75%] p-12 bg-slate-900 m-auto rounded-3xl mt-2 text-white;
+}
+
+.author{
+    @apply flex justify-between md:w-[75%] m-auto;
+}
+.authorh{
+    @apply mt-2 bg-slate-900 rounded-lg p-10 max-w-[500px] ;
+}
+.authorname{
+    @apply text-2xl font-semibold text-yellow-800 text-center mb-3;
+}
+.authorbio{
+    @apply text-white text-justify font-mono text-sm;
+}

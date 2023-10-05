@@ -6,8 +6,7 @@ export default async function Page({ params }) {
     const [slugInfo] = await getSlugDetail(params.slug);
     // console.log(slugInfo);
 
-    return <div>
+    return (
         <SingleBlogDetailsPage blogDetail={slugInfo} />
-
-    </div>
+    )
 }

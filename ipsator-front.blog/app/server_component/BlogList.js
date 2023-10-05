@@ -15,7 +15,7 @@ const BlogList = ({ blogPosts }) => {
             {/* Main Blog Post List  */}
             <div className={Styles.bloglist}>
 
-                {/* we can make separate component for singlepost  */}
+                {/* we can make separate component for singlepost but --->  */}
                 {blogPosts.map((blogPost) => (
                     <div
                         key={blogPost._id}
