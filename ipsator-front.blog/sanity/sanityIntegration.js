@@ -13,11 +13,11 @@ export async function getAllBlogPost() {
       _createdAt,
       slug{
         current
-      }
+      },
     }`;
   try {
     const posts = await sanityClient.fetch(query);
-    // console.log(posts)
+    // console.log(posts);
     return posts;
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -50,13 +50,32 @@ export async function getSlugDetail(slug_name) {
     body,
     categories,
     slug,
-    title
+    title,
+    comments
   }`;
   try {
     const slug_detail = await sanityClient.fetch(query);
+    // console.log(slug_detail)
     return slug_detail;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 }
 
+// *[_type == 'comment' && post._ref == 'a4aa581a-3d48-4a20-b803-a197f39de9f7']{
+//   user,
+//   text
+// }
+export async function getComment() {
+  const query = `*[_type == 'comment']{
+  user,
+  text
+}`
+  try {
+    const allcomment = await sanityClient.fetch(query);
+    return allcomment;
+  } catch (error) {
+    console.error("Error in fetching comment", error);
+  }
+
+}

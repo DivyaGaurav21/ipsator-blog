@@ -1,6 +1,7 @@
 import { urlFor } from "@/sanity/sanity";
 import PortableText from "react-portable-text";
 import Styles from '../../styles/SingleBlog.module.css'
+import Form from "@/components/Form";
 
 const SingleBlogDetailsPage = ({ blogDetail }) => {
     const {
@@ -12,8 +13,9 @@ const SingleBlogDetailsPage = ({ blogDetail }) => {
         body,
         categories,
         title,
+        comments,
     } = blogDetail;
-    // console.log(categories)
+
 
     return (
         <div className={Styles.postcontainer}>
@@ -50,7 +52,7 @@ const SingleBlogDetailsPage = ({ blogDetail }) => {
                             // Serializer for ordered lists (ol)
                             ol: ({ children }) => <ol className="list-decimal list-inside my-4">{children}</ol>,
                             // Serializer for list items (li)
-                            li: ({ children }) => <li className="mb-2 text-orange-400 font-mono">{children}</li>
+                            li: ({ children }) => <li className="mb-2 text-orange-400 font-mono text-sm">{children}</li>
                         }
                         }
                     />
@@ -64,12 +66,18 @@ const SingleBlogDetailsPage = ({ blogDetail }) => {
                     <p className={Styles.authorbio}>{author.bio}</p>
                 </div>
                 {/* form for comment on blog post */}
-                <div>
-                    <p>Enjoy this Blog ?</p>
-                    <h3>Leave a Comment below ?</h3>
-                </div>
-
+                <Form />
             </div>
+
+            <div>
+                {
+                    console.log(comments)
+                    // comments.map(comment =>
+                    //     <h1>{comment}</h1>
+                    // )
+                }
+            </div>
+
         </div>
     );
 };

@@ -50,5 +50,11 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'comments',
+      title: 'Comments',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'comment' }] }],
+    }),
   ]
 })

@@ -24,14 +24,14 @@
     @apply text-slate-900 font-bold font-mono;
 }
 .richtext{
-    @apply w-full md:w-[75%] p-12 bg-slate-900 m-auto rounded-3xl mt-2 text-white;
+    @apply w-full md:w-[75%] p-12 bg-neutral-700 m-auto rounded-3xl mt-2 text-white;
 }
 
 .author{
-    @apply flex justify-between md:w-[75%] m-auto;
+    @apply flex flex-col md:flex-row justify-between md:w-[75%] m-auto;
 }
 .authorh{
-    @apply mt-2 bg-slate-900 rounded-lg p-10 max-w-[500px] ;
+    @apply mt-2 bg-slate-900 rounded-lg p-10 max-w-[500px]  max-h-[300px];
 }
 .authorname{
     @apply text-2xl font-semibold text-yellow-800 text-center mb-3;
