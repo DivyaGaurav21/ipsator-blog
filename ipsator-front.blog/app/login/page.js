@@ -1,5 +1,15 @@
 "use client";
 
+/**
+ * The `Login` component is responsible for configuring and rendering the StytchLogin component, which is a prebuilt UI component for authentication powered by Stytch.
+ * It utilizes Stytch's email magic links and OAuth products for authentication.
+ * 
+ * The component accepts style, config, and callback props. The `config` object defines the authentication products, options, and redirect URLs, while the `styles` object defines the appearance of the StytchLogin component.
+ * For more details on available configuration options, refer to the Stytch JavaScript SDK documentation: https://stytch.com/docs/sdks/javascript-sdk#ui-configs
+ * 
+ * @returns {JSX.Element} - Returns the JSX element for the Login component, rendering the StytchLogin component within a styled container.
+ */
+
 import React from "react";
 import { StytchLogin } from "@stytch/nextjs";
 import { Products } from "@stytch/vanilla-js";
@@ -12,6 +22,7 @@ import { getDomainFromWindow } from '../../lib/urlUtils';
  * https://stytch.com/docs/sdks/javascript-sdk#ui-configs
 */
 const Login = () => {
+    // Define styles for the StytchLogin component
     const styles = {
         container: {
             width: "400px",
@@ -25,7 +36,7 @@ const Login = () => {
             },
         },
     };
-
+    // Define configuration options for StytchLogin component
     const config = {
         products: [Products.emailMagicLinks, Products.oauth],
         emailMagicLinksOptions: {
@@ -43,6 +54,7 @@ const Login = () => {
 
     return (
         <div className="flex justify-center items-center h-[65vh]">
+            {/* Render the StytchLogin component with configured styles and options */}
             <StytchLogin config={config} styles={styles} />
         </div>
     );

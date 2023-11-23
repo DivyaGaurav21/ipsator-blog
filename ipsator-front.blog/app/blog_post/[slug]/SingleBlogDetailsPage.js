@@ -1,9 +1,17 @@
+/**
+ * This component renders details of a single blog post including the title, main image, body content, author details, and a form for submitting comments.
+ * It utilizes the PortableText component for rendering rich text content with customized serializers.
+ * @param {Object} blogDetail - The detailed information about the blog post received as props.
+ * @returns {JSX.Element} - Returns the JSX element for the SingleBlogDetailsPage.
+ */
+
 import { urlFor } from "@/sanity/sanity";
 import PortableText from "react-portable-text";
 import Styles from '../../styles/SingleBlog.module.css'
 import Form from "@/components/Form";
 
 const SingleBlogDetailsPage = ({ blogDetail }) => {
+    // Extract relevant information from the blogDetail prop
     const {
         _id,
         slug,
@@ -75,6 +83,7 @@ const SingleBlogDetailsPage = ({ blogDetail }) => {
                     // comments.map(comment =>
                     //     <h1>{comment}</h1>
                     // )
+                    //i will update the comment soon
                 }
             </div>
 

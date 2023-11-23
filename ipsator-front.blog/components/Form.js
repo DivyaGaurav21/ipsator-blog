@@ -26,12 +26,12 @@ function Form() {
     };
 
     return (
-        <div className="container mx-auto mt-2 bg-gray-200 rounded-lg p-3 max-w-[500px] min-w-[300px]">
+        <div className="container mx-auto mt-2 bg-transparent rounded-lg p-3 max-w-[500px] min-w-[300px]">
             <div>
-                <p className="text-gray-600">Enjoy this Blog?</p>
+                <p className="text-gray-600 text-xl">Enjoy this Blog?</p>
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">Leave a Comment below</h3>
             </div>
-            <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form onSubmit={handleSubmit} className="bg-slate-500 shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <div className="mb-2">
                     <label className="block text-gray-800 text-sm font-semibold mb-2" htmlFor="name">
                         Your Name

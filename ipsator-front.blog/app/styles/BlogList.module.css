@@ -2,7 +2,7 @@
     @apply py-10 px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl;
 }
 .desktopbtn{
-    @apply hidden lg:flex lg:items-center mt-4;
+    @apply hidden lg:flex lg:items-center;
 }
 .mobilebtn{
     @apply flex items-center justify-center mt-8 lg:hidden;

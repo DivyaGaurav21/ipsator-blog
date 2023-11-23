@@ -1,4 +1,19 @@
+/**
+ * This module contains functions for fetching data from Sanity using the configured `sanityClient`.
+ * It exports functions to get all blog posts, all categories, details for a specific slug, and all comments.
+ *
+ * @module sanityData
+ * @requires sanity
+ */
 import { sanityClient } from "./sanity";
+
+/**
+ * Fetches all blog posts from Sanity.
+ *
+ * @async
+ * @function
+ * @returns {Promise<Array>} - Returns a promise that resolves to an array of blog post objects.
+ */
 
 export async function getAllBlogPost() {
   const query = `*[_type == 'post']{
@@ -24,6 +39,14 @@ export async function getAllBlogPost() {
   }
 }
 
+/**
+ * Fetches all categories from Sanity.
+ *
+ * @async
+ * @function
+ * @returns {Promise<Array>} - Returns a promise that resolves to an array of category objects.
+ */
+
 export async function getAllCateogary() {
   const query = `*[_type == 'category']{
                 _id, 
@@ -37,6 +60,16 @@ export async function getAllCateogary() {
     console.error("Error fetching data:", error);
   }
 }
+
+
+/**
+ * Fetches details for a specific blog post using its slug from Sanity.
+ *
+ * @async
+ * @function
+ * @param {string} slug_name - The slug of the blog post.
+ * @returns {Promise<Object|null>} - Returns a promise that resolves to the details of the blog post or null if not found.
+ */
 
 export async function getSlugDetail(slug_name) {
   const query = `*[_type == 'post' && slug.current == '${slug_name}']{
@@ -62,10 +95,14 @@ export async function getSlugDetail(slug_name) {
   }
 }
 
-// *[_type == 'comment' && post._ref == 'a4aa581a-3d48-4a20-b803-a197f39de9f7']{
-//   user,
-//   text
-// }
+/**
+ * Fetches all comments from Sanity.
+ *
+ * @async
+ * @function
+ * @returns {Promise<Array>} - Returns a promise that resolves to an array of comment objects.
+ */
+
 export async function getComment() {
   const query = `*[_type == 'comment']{
   user,
