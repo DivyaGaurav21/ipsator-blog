@@ -45,9 +45,13 @@
 
 ![homePage](https://res.cloudinary.com/ecom-next/image/upload/v1700774829/projectimg/ehwt6hvdvm8raklmdudt.png)
 
-## FOR RUNNING PROJECT IN YOUR SYSTEM DO
-      npm i
-      npm run dev
+### FOR RUNNING PROJECT IN YOUR SYSTEM DO
+      ## for run sanity server on local  && for run frontend
+         - npm i
+         - npm run dev
+         - (you have to run both) / but i have deploy santy backed , you can run code of only frontend
+        
+         
 
 ## What I explore before start working on it ?
  - Next js (Static site Generation(ssg) , Server-side-rendering(ssr) , routing , data fetching , deployment  , app router / page router)
